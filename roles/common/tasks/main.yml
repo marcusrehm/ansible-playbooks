@@ -1,4 +1,15 @@
 ---
+- name: disable bluetooth by default
+  lineinfile: dest='/etc/rc.local' insertbefore='exit 0' line='rfkill block bluetooth' state=present
+  become: true
+
+- name: configure wifi for better performance (work actually...)
+  shell: echo "options iwlwifi 11n_disable=1" | tee /etc/modprobe.d/iwlwifi.conf
+  shell: modprobe -rfv iwldvm
+  shell: modprobe -rfv iwlwifi
+  shell: modprobe -v iwlwifi
+  become: true
+
 - name: install Chrome repository
   apt_repository: repo='deb http://dl.google.com/linux/chrome/deb/ stable main' state=present filename='google-chrome'
   become: true
