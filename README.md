@@ -6,10 +6,10 @@ roles
 
 **common**
 - Configure bluetooth and wireles card for Ubuntu 14.04 LTS on Dell Inspiron 5448.
-- Installs Chrome webbrowser.
+- Install Chrome webbrowser.
 
 **development**
-- Installs Atom editor and GitKraken.
+- Install Atom editor and GitKraken.
 
 **anaconda**
 - Download and install anaconda from Continum Analytics.
