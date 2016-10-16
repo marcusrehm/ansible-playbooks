@@ -1,0 +1,23 @@
+---
+
+- name: install Atom Editor repository
+  apt_repository: repo='ppa:webupd8team/atom' state=present
+  become: true
+
+- name: install Atom Editor
+  apt: pkg=atom state=installed update_cache=true
+  become: true
+
+- name: download GitKraken
+  become: false
+  get_url:
+    url: https://release.gitkraken.com/linux/gitkraken-amd64.deb
+    dest: /tmp/gitkraken-amd64.deb
+    mode: 0755
+
+- name: install GitKraken Git GUI
+  apt: deb='/tmp/gitkraken-amd64.deb'
+  become: true
+
+- name: delete GitKraken package file
+  file: name=/tmp/gitkraken-amd64.deb state=absent

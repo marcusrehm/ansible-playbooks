@@ -1,0 +1,5 @@
+---
+  # ./ansible-playbook -i localhost ../../ansible-playbooks/laptop.yml --ask-become-pass
+- hosts: localhost
+  roles:
+      - common, development, anaconda

@@ -1,0 +1,8 @@
+---
+- name: install Chrome repository
+  apt_repository: repo='deb http://dl.google.com/linux/chrome/deb/ stable main' state=present filename='google-chrome'
+  become: true
+
+- name: install Chrome
+  apt: pkg=google-chrome-stable state=installed update_cache=true
+  become: true
