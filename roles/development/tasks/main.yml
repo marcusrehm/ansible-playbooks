@@ -1,11 +1,27 @@
 ---
 
+- name: install openjdk-8 repository
+  apt_repository: repo='ppa:openjdk-r/ppa' state=present
+  become: true
+
+- name: install openjdk-8
+  apt: pkg=openjdk-8-jdk state=installed update_cache=true
+  become: true
+
+- name: install openjdk-8-source
+  apt: pkg=openjdk-8-source state=installed update_cache=true
+  become: true
+
 - name: install Atom Editor repository
   apt_repository: repo='ppa:webupd8team/atom' state=present
   become: true
 
 - name: install Atom Editor
   apt: pkg=atom state=installed update_cache=true
+  become: true
+
+- name: install Atom Editor's minimap
+  shell: apm install minimap
   become: true
 
 - name: download GitKraken

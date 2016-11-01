@@ -1,0 +1,19 @@
+---
+
+- name: install Atom Editor's ensime package
+  shell: apm install ensime
+  become: true
+
+- name: install Atom Editor's linter-scalac
+  shell: apm install linter-scalac
+  become: true
+
+- name: install Scala
+  apt:
+    deb: http://www.scala-lang.org/files/archive/scala-2.11.8.deb
+  become: true
+
+- name: install sbt
+  apt:
+    deb: https://dl.bintray.com/sbt/debian/sbt-0.13.12.deb
+  become: true
