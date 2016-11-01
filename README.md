@@ -14,8 +14,8 @@ roles
 **anaconda**
 - Download and install anaconda from Continum Analytics.
 
-**Scala Environment**
-- Download and install Scala (2.11.8) and sbt (0.13.12) and Atom's Ensime.
+**scala**
+- Download and install Scala (2.11.8), sbt (0.13.12) and Atom's Ensime.
 
 To execute run *./ansible-playbook -i localhost ../../ansible-playbooks/laptop.yml --ask-become-pass* from ansible/bin folder.
 
